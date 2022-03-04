@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<title>Kuih Classification System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('static/bgimage.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.cont{
+  background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+}
+
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    MALAY'S TRADITIONAL KUIH CLASSIFICATION
+  </div>
+  <div class="w3-display-middle">
+    <h3 class="w3-jumbo w3-animate-top w3-center">CLASSIFY YOUR KUIH</h3>
+
+     <!-- ABOUT SYSTEM -->
+    <p class="w3-large w3-center">This system was trained on Malay's Traditional Kuih <br>and the model will only predicts the current kuih types: </p>
+  <p class="w3-large w3-center" style = "text-align: center;color:rgb(255, 89, 0)">Apam Seri Ayu, Nona Manis, Lompang, Badak Berendam, and Peria</p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+
+    <!-- CLASSIFY KUIH -->
+    <div class="upload-section">
+        <div class="upload-file">
+            <form align="center" class = "file-form" action="/submit" method="post", enctype="multipart/form-data">
+                <input class="file-form-input" type="file" , name = "file"/>
+                <button class="btn1 btn-submit btn-lg">Upload</button> 
+            </form>
+        </div>
+
+        <div class = "header-content-sub">
+                <p style = "text-align: center; margin-top: 15px;color: red" class="header-content-info">{{error}}</p>
+        </div>
+    </div>
+
+    <!-- Prediction Section -->
+<div class="cont w3-container  w3-padding-16">
+
+    <div class = "second-main" style = "height: 100% , width : 100%;">
+
+    <div class = "header">
+        <row style = "width: 100% ; display: flex; justify-content: center;">
+            <h3 class="header-text">Uploaded Image</h3>
+        </row>
+        <row style = "width: 100% ; display: flex; justify-content: center;">
+            <img class = "result-img" style="width:200px; height: 200px;"src={{url_for('static', filename = 'images/'+ img)}}>
+        </row>
+    </div>
+
+    <div class = "info">
+    
+        <row style = "width: 100% ; display: flex; justify-content: center;">
+            <h3 class = "header-text" style= color:red>Prediction</h3>
+        </row>
+        <row style = "width: 100%; display: flex; justify-content: center;">
+            <table class="table-bordered text-light table-custom">
+                <tr>
+                    <td>This is kuih {{ predictions.class1 }} with </td>
+                    <td>{{ predictions.prob1 }} % accuracy</td>
+                  </tr>
+            </table>
+        </row>
+    </div>
+</div>    
+
+</div>
+
+    <!--<p class="w3-large w3-center">35 days left</p>-->
+
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    By <a href="https://www.linkedin.com/in/amir-shaari-a0b689229/" target="_blank">Amir Shaari</a>
+  </div>
+</div>
+
+</body>
+</html>

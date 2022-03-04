@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>Kuih Classification System</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('static/bgimage.jpg');
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    MALAY'S TRADITIONAL KUIH CLASSIFICATION
+  </div>
+  <div class="w3-display-middle">
+    <h1 class="w3-jumbo w3-animate-top w3-center">CLASSIFY YOUR KUIH</h1>
+    <p class="w3-large w3-center">This system was trained on Malay's Traditional Kuih <br>and the model will only predicts the current kuih types: </p>
+  <p class="w3-large w3-center" style = "text-align: center;color:rgb(255, 89, 0)">Apam Seri Ayu, Nona Manis, Lompang, Badak Berendam, and Peria</p>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+
+    <div class="upload-section">
+        <div class="upload-file">
+            <form align="center" class = "file-form" action="/submit" method="post", enctype="multipart/form-data">
+                <input class="file-form-input" type="file" , name = "file"/>
+                <button class="btn-submit btn-lg">Upload</button> 
+            </form>
+        </div>
+
+        <div class = "header-content-sub">
+                <p style = "text-align: center; margin-top: 15px;color: red" class="header-content-info">{{error}}</p>
+        </div>
+    </div>
+
+    <!--<p class="w3-large w3-center">35 days left</p>-->
+
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    By <a href="https://www.linkedin.com/in/amir-shaari-a0b689229/" target="_blank">Amir Shaari</a>
+  </div>
+</div>
+
+</body>
+</html>
